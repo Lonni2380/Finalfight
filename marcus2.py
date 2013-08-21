@@ -5,7 +5,7 @@ s["riss"] = {"deckung_gehen":1,"ausweichen":0,"verstecken":0.5,"heiltrank":1}
 s["klaue"] = {"deckung_gehen":0.5,"ausweichen":1,"verstecken":0,"heiltrank":1}
 s["schlafen"] = {"deckung_gehen":0,"ausweichen":0,"verstecken":0,"heiltrank":0}
 #schadensmodell
-#Heiltrank : 1
+#Heiltrank :1
 #ausweichen + schrei:0.5
 #ausweichen + riss:0
 #ausweichen + klaue:1
@@ -45,37 +45,37 @@ menuD = ["Beenden",
 
 while bhp > 0 and shp > 0:
     runde = runde + 1 
-    print ("Autsch!",b,"hatt noch",bhp,"leben übrig")
-    print ("☻" * int(bhp))
+    print("Autsch!",b,"hat noch",bhp,"leben übrig")
+    print("☻" * int(bhp))
     while True:
         for x in menuA:
-            print (menuA.index (x),x)
+            print(menuA.index (x),x)
         x = input("Drücke enter")
         print()
         if x <"0" or x > "6" or len (x)>1:
-            print ("Falsche Eingabe!!")
+            print("Falsche Eingabe!!")
             continue 
         else:
-            print ("Brav")
+            print("Brav")
             break
     if x == "0":
         break
     elif x == "1":
-        print ("Goblin greift an! runde:",runde)
+        print("Goblin greift an! runde:",runde)
         schaden = random.randint(0,maxschaden)
-        print (b,"erleidet",schaden,"schaden")
+        print(b,"erleidet",schaden,"schaden")
         bhp = bhp-schaden
     elif x == "2" :
-        print ("Du versuchst den Ultimativen Angriff")
+        print("Du versuchst den Ultimativen Angriff")
         treffer = random.random()
         if treffer < kritt:
-            print ("Ulti geglückt")
+            print("Ulti geglückt")
             schaden = maxschaden * 4
-            print (b,"erleidet",schaden,"schaden")
+            print(b,"erleidet",schaden,"schaden")
             bhp = bhp-schaden
             print("☻" * int(bhp))
         else:
-            print ("Ulti verschwendet")
+            print("Ulti verschwendet")
 
      
     #drache schlägt zurück
@@ -85,19 +85,19 @@ while bhp > 0 and shp > 0:
 
     while True:
         for x in menuD:
-            print (menuD.index (x),x)
-        x = input("Drücke enter")
+            x = input(menuD.index (x),x)
+            print("Drücke enter")
         print()
         if x <"0" or x > "6" or len (x)>1:
-            print ("Falsche Eingabe!!")
+            print("Falsche Eingabe!!")
             continue 
         else:
-            print ("Brav", x)
+            print("Brav", x)
             break
     if x == "0":
         break
     elif x == "4":
-        print ("Du trinkst einen heiltrank")
+        print("Du trinkst einen heiltrank")
         shp = shp + 15
         print("Du hast jetzt ",shp,"hp")
         print("♥" * int(shp))
@@ -113,17 +113,17 @@ while bhp > 0 and shp > 0:
 
     aktion = random.choice(drachenaktion)
     if aktion == "schrei":
-         print ("das monster spuckt feuer")
+         print("das monster spuckt feuer")
     elif aktion == "klaue":
-        print ("das monster schlägt nach dir")
+        print("das monster schlägt nach dir")
     elif aktion == "riss":
-        print ("das monster schnappt nach dir")
+        print("das monster schnappt nach dir")
     elif aktion == "schlafen":
-        print ("Das monster schläft ein")
-    #schadens berechnung
+        print("Das monster schläft ein")
+    #schadensberechnung
     #print (menuD[x])
     schaden = s[aktion][menuD[int(x)]] * random.randint(10,20)
     shp = shp - schaden
-    print ("Du erleidest schaden:",schaden)
-    print ("Du hast noch",shp,"Leben")
-    print ("♥" * int(shp))
+    print("Du erleidest schaden:",schaden)
+    print("Du hast noch",shp,"Leben")
+    print("♥" * int(shp))
