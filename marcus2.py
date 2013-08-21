@@ -69,13 +69,13 @@ while bhp > 0 and shp > 0:
         print("Du versuchst den Ultimativen Angriff")
         treffer = random.random()
         if treffer < kritt:
-            print("Ulti geglückt")
+            print("Ultima geglückt")
             schaden = maxschaden * 4
             print(b,"erleidet",schaden,"schaden")
             bhp = bhp-schaden
             print("☻" * int(bhp))
         else:
-            print("Ulti verschwendet")
+            print("Ultima verschwendet")
 
      
     #drache schlägt zurück
